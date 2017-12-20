@@ -2,7 +2,7 @@ title: 算法-链表
 date: 2017-11-21 22:34:34
 tags:
 categories:
-- 算法
+- basic
 ---
 
 # 概念

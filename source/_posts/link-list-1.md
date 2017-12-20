@@ -1,8 +1,8 @@
-title: 算法-顺序表
+title: 顺序表
 date: 2017-11-20 22:34:34
 tags:
 categories:
-- 算法
+- basic
 ---
 
 # 概念
