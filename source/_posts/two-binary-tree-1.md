@@ -40,7 +40,10 @@ class Node(object):
 
 ### 前序遍历
 
-根节点->左子树->右子树
+若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树，再前序遍历右子树
+
+![前序遍历](http://ozoxs1p4r.bkt.clouddn.com/7178691-f61f5196e2fd7a77.png)
+
 ```python
 def traverse(node):
     if node is None:
@@ -54,7 +57,10 @@ def traverse(node):
 
 ### 中序遍历
 
-左子树->根节点->右子树
+若树为空，则空操作返回，否则从最左下结点开始（注意并不是先访问根结点），中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树
+
+![中序遍历](http://ozoxs1p4r.bkt.clouddn.com/7178691-02e28eaeedfcc187.png)
+
 ```python
 def traverse(node):
     if node is None:
@@ -67,7 +73,10 @@ def traverse(node):
 
 ### 后序遍历
 
-左子树->右子树->根节点
+若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点
+
+![后序遍历](http://ozoxs1p4r.bkt.clouddn.com/7178691-828924a25493a9c5.png)
+
 ```python
 def traverse(node):
     if node is None:
@@ -81,7 +90,11 @@ def traverse(node):
 
 ### 层序遍历
 
-层序遍历又称广度优先搜索，按照从上到下、从左到右的顺序对节点按照节点所在的层进行遍历，借助队列实现。
+层序遍历又称广度优先搜索，按照从上到下、从左到右的顺序对节点按照节点所在的层进行遍历，借助队列实现
+。
+
+![层序遍历](http://ozoxs1p4r.bkt.clouddn.com/7178691-b40fef0f8efaa1cd.png)
+
 
 ```python
 
