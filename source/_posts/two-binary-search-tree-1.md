@@ -57,6 +57,18 @@ class BST(object):
         """
         pass
 
+    def floor(self, node, key):
+        """
+        小于等于 key 的最大值
+        """
+        pass
+
+    def ceil(self, node, key):
+        """
+        大于等于 key 的最小值
+        """
+        pass
+
 ```
 
 节点计数等式成立
@@ -152,7 +164,68 @@ def max(self, node):
 
 想要查找 floor(G)，小于等于 G 的最大键，如果 G 小于二叉查找的根节点，floor(G) 一定在根节点的左子树中，如果 G 大于根节点，只有在根节点的右子树中存在小于 G 的节点时，floor(G) 才会出现在右子树中，否则根节点就是 floor(G)
 
+```python
+def floor(self, node, key):
+    """
+    小于等于 key 的最大键, key 向下取整
+    """
+    if node is None:
+        return
+    # 当前节点大于 key
+    if key < node.key:
+        return self.floor(node.left, key)
+
+    # 当前节点等于 key
+    if key == node.key:
+        return node
+
+    # 当前节点小于 key 右子树中找大于 key 的键，因为右子树中的所有键小于当前节点
+    # 右子树中存在小于 key 的键
+    t = self.floor(node.right, key)
+    # 如果右子树不存在小于 key 的键，说明当前小于 key 的节点是那个 floor(key)，因为右子树的键都大于当前节点
+    if t is not None:
+        return t
+    else:
+        return node
+
+```
+
 ## 向上取整 ceil
 
 想要查找 ceil(G)，大于等于 G 的最小健，如果 G 大于二叉查找的根节点，ceil(G) 根节点的右子树中，如果 G 小于根节点，只有在根节点的左子树中存在大于 G 的节点时，ceil(G) 才会出现在左子树中，否则根节点就是 ceil(G)
+
+
+```python
+
+def ceil(self, node, key):
+    """
+    大于等于 key 的最小键, key 向上取整
+    """
+    if node is None:
+        return
+
+    # 当前节点小于 key
+    if key > node.key:
+        return self.ceil(node.right, key)
+
+    # 当前节点等于 key
+    if key == node.key:
+        return node
+
+    # 当前节点大于 key在左子树中找大于 key 的键，因为左子树中的所有键小于当前节点
+    # 左子树中存在大于 key 的键
+    t = self.ceil(node.left, key)
+    # 如果不存在，说明当前小于 key 的节点是那个 ceil(key)
+    if t is not None:
+        return t
+    else:
+        return node
+
+
+```
+
+
+## select 
+
+
 
