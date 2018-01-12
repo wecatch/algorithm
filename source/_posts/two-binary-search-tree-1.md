@@ -224,8 +224,11 @@ def ceil(self, node, key):
 
 ```
 
+## 删除最小键
 
-## select 
+
+## 删除最大键
+
 
 
 
