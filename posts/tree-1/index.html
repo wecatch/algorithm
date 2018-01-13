@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 树 · Hexo</title><meta name="description" content="树 - John Doe"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/algorithm/favicon.ico"><link rel="stylesheet" href="/algorithm/css/prontera.css"><link rel="search" type="application/opensearchdescription+xml" href="http://wecatch.me/algorithm/atom.xml" title="Hexo"></head><body><header class="feature-header"><nav class="component-nav"><ul><div class="logo-container"><a href="/"><h2 class="title">Hexo</h2></a></div><a href="/algorithm/" target="_self" class="li component-nav-item"><p>首页</p></a><a href="/algorithm/categories/basic/" target="_self" class="li component-nav-item"><p>基础概念</p></a><a href="/algorithm/categories/advanced/" target="_self" class="li component-nav-item"><p>高级主题</p></a><a href="/algorithm/categories/practice/" target="_self" class="li component-nav-item"><p>最佳实践</p></a><a href="/algorithm/book" target="_self" class="li component-nav-item"><p>书籍推荐</p></a><a href="/algorithm/categories/projects/" target="_self" class="li component-nav-item"><p>开源项目</p></a></ul></nav></header><main class="container"><div id="post-container"><div class="post"><article class="post-block"><h1 class="post-title">树</h1><div class="post-info">Oct 17, 2017</div><div class="post-content"><p>树结构是一种典型的非线性结构，非线性就意味着数据结构中至少拥有两个直接前驱或后继元素</p>
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><p>树是由 n（n&gt;=0）个节点组成的有穷集合 D 与 D 上的关系集合 R 构成的集合，通常用 T 来表示，再此定义上，树满足以下三个条件</p>
+<ul>
+<li>n=0 时，该节点集合为空，该树被称之为空树</li>
+<li>在任意非空树中，有且只有一个根节点 root</li>
+<li>当 n&gt;1 时，除根节点外其余节点可以分为 m 个不相交的自己，每一个这样的子集本身又是一棵树，称为根节点的子树</li>
+</ul>
+<p>树的定义是一个递归定义。</p>
+<h2 id="树的表示"><a href="#树的表示" class="headerlink" title="树的表示"></a>树的表示</h2><p>树可以用树的形状或文氏图表示</p>
+<h2 id="节点的度"><a href="#节点的度" class="headerlink" title="节点的度"></a>节点的度</h2><p>节点拥有的子树的数目称之为节点度，直观来说就是每个节点的直接子节点个数</p>
+<h2 id="树的度"><a href="#树的度" class="headerlink" title="树的度"></a>树的度</h2><p>树中各节点度的最大的值称之为树的度</p>
+<h2 id="分支节点"><a href="#分支节点" class="headerlink" title="分支节点"></a>分支节点</h2><p>度不为 0 的节点称之为分支节点或普通节点，有的称之为非终端节点</p>
+<h2 id="节点的层次"><a href="#节点的层次" class="headerlink" title="节点的层次"></a>节点的层次</h2><p>从树的根节点开始，根节点为第1层，根节点的子节点是第2层，依次类推</p>
+<h2 id="树的深度"><a href="#树的深度" class="headerlink" title="树的深度"></a>树的深度</h2><p>树中节点的最大层次称之书的高度或深度</p>
+<h2 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h2><p>n(n&gt;=0) 个不相交的树称之为森林</p>
+<h2 id="叶子节点"><a href="#叶子节点" class="headerlink" title="叶子节点"></a>叶子节点</h2><p>度为 0 的节点称之为叶子节点</p>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><ul>
+<li>非空树的节点总数等于树中所有节点的度之和再加 1 (1其实是根节点)</li>
+<li>深度为 k 的非空树第 i 层最多有 k^i-1 个节点 (证明？)</li>
+<li>深度为 h 的 k 叉树最多有</li>
+<li>具有 n 个节点的 k 叉树的最小深度</li>
+</ul>
+<h1 id="树的实践和应用"><a href="#树的实践和应用" class="headerlink" title="树的实践和应用"></a>树的实践和应用</h1><h2 id="问题【1】"><a href="#问题【1】" class="headerlink" title="问题【1】"></a>问题【1】</h2><blockquote>
+<p>树和森林的转换</p>
+</blockquote>
+</div></article></div></div></main><footer class="footer-container"><div class="paginator"><a href="/algorithm/posts/link-list-1/" class="prev">PREV</a></div><div class="copyright"><p>© 2017 - 2018 <a href="http://wecatch.me/algorithm">John Doe</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/AngryPowman/hexo-theme-prontera" target="_blank">hexo-theme-prontera</a>.</p><p>本站文章遵循 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">Creative Commons BY-NC-ND 4.0（自由转载-保持署名-非商用-禁止演绎）</a></p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-79591400-1",'auto');ga('send','pageview');</script></body></html>
