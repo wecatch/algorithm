@@ -1,4 +1,4 @@
-title: 算法—树
+title: 树
 date: 2017-10-17 22:34:34
 tags:
 - tree

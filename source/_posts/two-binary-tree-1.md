@@ -1,4 +1,4 @@
-title: 算法-二叉树
+title: 二叉树
 date: 2017-11-28 13:10:49
 tags:
 categories:

@@ -1,4 +1,4 @@
-title: 算法-链表
+title: 链表
 date: 2017-11-21 22:34:34
 tags:
 categories:

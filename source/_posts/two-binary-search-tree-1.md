@@ -226,9 +226,53 @@ def ceil(self, node, key):
 
 ## 删除最小键
 
+递归左子树直到左子树为空，然后删除该节点
+
+```python
+def deleteMin(self, node):
+    """
+    删除最小节点，不断递归左子树，直到左子树为空，则该节点是最小节点，返回该节点的右链接为上个节点的左子树
+    """
+    if node is None:
+        return None
+
+    if node and node.left is None:
+        return node.right
+
+    node.left = self.deleteMin(node.left)
+    node.N = self.size(node.left) + self.size(node.right) + 1
+    return node
+```
 
 ## 删除最大键
 
+递归右子树直到右子树为空，然后删除该节点
 
+```python
+def deleteMax(self, node):
+    """
+    删除最大节点，不断递归右子树，直到右子树为空，则该节点是最大节点，返回该节点的左链接为上个节点的右子树
+    """
+    if node is None:
+        return None
 
+    if node and node.right is None:
+        return node.left
+    # 向上不断更新右链接
+    node.right = self.deleteMax(node.right)
+    node.N = self.size(node.left) + self.size(node.right) + 1
+    return node
 
+```
+
+## 删除节点
+
+如果删除的节点是最小或最大处理方式同上，如果删除节点是有两颗子树的节点需要特殊处理
+
+![](http://ozoxs1p4r.bkt.clouddn.com/WX20180113-134211@2x.jpg)
+
+具体步骤如下
+1.将被删除节点 node 保存为 t:`t = node`
+2.将被删除节点指向它的后继节点 node = min(t.right)
+3.讲新节点 node 的右链接指向被删除节点删除最小节点之后的子树 `node.right = deleteMin(t.right)`，这样保证了其右子树都比 node 要大
+4.将新节点 node 的左链接指向被删除节点的左链接，这样保证了左子树都比 node 要小
